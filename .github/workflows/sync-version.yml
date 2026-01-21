@@ -1,0 +1,71 @@
+name: Sync Version (WordPress)
+ 
+on:
+  repository_dispatch:
+    types: [version_update]
+ 
+permissions:
+  contents: write
+  pull-requests: write
+ 
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    environment: PAT
+ 
+    steps:
+      # --------------------------------------------
+      # Checkout repository
+      # --------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          fetch-depth: 1
+ 
+      # --------------------------------------------
+      # Load version & release notes
+      # --------------------------------------------
+      - name: Load payload
+        run: |
+          echo "VERSION=${{ github.event.client_payload.version }}" >> $GITHUB_ENV
+          echo "${{ github.event.client_payload.release_notes }}" > release_notes.txt
+          echo "Version: $VERSION"
+ 
+      # --------------------------------------------
+      # Update JS/CSS versions
+      # --------------------------------------------
+      - name: Update JS/CSS versions
+        run: |
+          find ./public -type f -name "*.js"  \
+            -exec sed -i "s/[0-9]\+\.[0-9]\+\.[0-9]\+/${VERSION}/g" {} \;
+ 
+          find ./public -type f -name "*.css" \
+            -exec sed -i "s/[0-9]\+\.[0-9]\+\.[0-9]\+/${VERSION}/g" {} \;
+ 
+      # --------------------------------------------
+      # Commit & push release branch
+      # --------------------------------------------
+      - name: Commit changes
+        run: |
+          git checkout -B release-v${VERSION}
+ 
+          git config user.name "alpha2026a"
+          git config user.email "alphaalphaa2020@gmail.com"
+ 
+          git add public release_notes.txt
+          git commit -m "chore: release WordPress plugin v${VERSION}"
+          git push origin release-v${VERSION} --force
+ 
+      # --------------------------------------------
+      # Create Pull Request
+      # --------------------------------------------
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+        run: |
+          gh pr create \
+            --base master \
+            --head release-v${VERSION} \
+            --title "Release v${VERSION}" \
+            --body "release: yes"
