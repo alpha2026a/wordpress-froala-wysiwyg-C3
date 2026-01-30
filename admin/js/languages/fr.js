@@ -1,19 +1,20 @@
 /*!
- * froala_editor v5.0.0 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * French
    */
-
   FE.LANGUAGE['fr'] = {
     translation: {
       // Place holder
@@ -54,7 +55,7 @@
       'Heading 2': 'Titre 2',
       'Heading 3': 'Titre 3',
       'Heading 4': 'Titre 4',
-      'Single': 'Simple',
+      'Single': 'Célibataire',
       // Style
       'Paragraph Style': 'Style de paragraphe',
       'Inline Style': 'Style en ligne',
@@ -180,15 +181,6 @@
       'Left align': 'Aligner à gauche',
       'Center align': 'Aligner au centre',
       'Right align': 'Aligner à droite',
-      'solid': 'Ligne pleine',
-      'dashed': 'Ligne en tirets',
-      'dashed Borders': 'Bordures pointillées',
-      'dotted': 'Ligne en points',
-      'double': 'Ligne double',
-      'groove': 'Ligne rainurée',
-      'ridge': 'Ligne en relief',
-      'inset': 'Ligne intérieure',
-      'outset': 'Ligne extérieure',
       // Files
       'Upload File': "T\xE9l\xE9verser un fichier",
       'Drop file': 'Cliquer pour parcourir',
@@ -353,19 +345,10 @@
       'Enter the anchor name without space': 'Entrez le nom de l\'ancre sans espace',
       'Anchor name already exists.': 'Le nom de l\'ancre existe déjà.',
       // Export to Word
-      'Export to Word': 'Exporter vers Word',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Assurez-vous que toutes les bibliothèques dépendantes requises sont disponibles pour que l\'extension fonctionne.',
-      // Import_from_word
-      'Import from Word': 'Importer depuis Word',
-      'Please upload a valid file': 'Veuillez télécharger un fichier valide.',
-      'File size must be less than': 'La taille du fichier doit être inférieure à',
-      //Code Snippet
-      'Code Snippet': 'Extrait de Code',
-      'Insert Code Snippet': 'Insérer un extrait de code',
-      'Edit Code Snippet': 'Modifier l\'extrait de code'
+      'Export to Word': 'Exporter vers Word'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=fr.js.map

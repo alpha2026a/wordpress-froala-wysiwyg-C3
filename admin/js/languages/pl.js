@@ -1,19 +1,20 @@
 /*!
- * froala_editor v5.0.0 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Polish
    */
-
   FE.LANGUAGE['pl'] = {
     translation: {
       // Place holder
@@ -172,14 +173,6 @@
       'Left align': 'Wyrównaj do lewej',
       'Center align': 'Wyśrodkuj',
       'Right align': 'Wyrównaj do prawej',
-      'solid': 'Linia ciągła',
-      'dashed': 'Linia kreskowana',
-      'double': 'Podwójnie',
-      'dotted': 'Linia kropkowana',
-      'groove': 'Linia żłobiona',
-      'ridge': 'Linia wypukła',
-      'inset': 'Linia wewnętrzna',
-      'outset': 'Linia zewnętrzna',
       // Files
       'Upload File': "Prze\u015Blij plik",
       'Drop file': "Upu\u015Bci\u0107 plik",
@@ -344,19 +337,10 @@
       'Enter the anchor name without space': 'Wprowadź nazwę kotwicy bez spacji',
       'Anchor name already exists.': 'Nazwa kotwicy już istnieje.',
       //Export to Word
-      'Export to Word': 'Eksport do Worda',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Upewnij się, że wszystkie wymagane biblioteki zależne są dostępne, aby wtyczka mogła działać.',
-      // Import_from_word
-      'Import from Word': 'Importuj z Worda',
-      'Please upload a valid file': 'Proszę przesłać ważny plik.',
-      'File size must be less than': 'Rozmiar pliku musi być mniejszy niż',
-      //Code Snippet
-      'Code Snippet': 'Fragment kodu',
-      'Insert Code Snippet': 'Wstaw fragment kodu',
-      'Edit Code Snippet': 'Edytuj fragment kodu'
+      'Export to Word': 'Eksport do Worda'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=pl.js.map

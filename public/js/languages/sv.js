@@ -1,19 +1,20 @@
 /*!
- * froala_editor v1.0.8 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Swedish
    */
-
   FE.LANGUAGE['sv'] = {
     translation: {
       // Place holder
@@ -155,14 +156,6 @@
       'Left align': 'Vänsterjustera',
       'Center align': 'Centerjustera',
       'Right align': 'Högerjustera',
-      'solid': 'Heldragen linje',
-      'dashed': 'Streckad linje',
-      'dotted': 'Punktad linje',
-      'double': 'Dubbel linje',
-      'groove': 'Graverad linje',
-      'ridge': 'Upphöjd linje',
-      'inset': 'Inre linje',
-      'outset': 'Yttre linje',
       // Files
       'Upload File': 'Ladda upp fil',
       'Drop file': "Sl\xE4pp fil",
@@ -327,19 +320,10 @@
       'Enter the anchor name without space': 'Ange ankarnamnet utan mellanslag',
       'Anchor name already exists.': 'Ankarnamnet finns redan.',
       // Export to Word
-      'Export to Word': 'Exportera till Word',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Se till att alla nödvändiga beroende bibliotek är tillgängliga för att tillägget ska fungera.',
-      // Import_from_word
-      'Import from Word': 'Importera från Word',
-      'Please upload a valid file': 'Vänligen ladda upp en giltig fil.',
-      'File size must be less than': 'Filstorleken måste vara mindre än',
-      //Code Snippet
-      'Code Snippet': 'Kodavsnitt',
-      'Insert Code Snippet': 'Infoga kodavsnitt',
-      'Edit Code Snippet': 'Redigera kodavsnitt'
+      'Export to Word': 'Exportera till Word'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=sv.js.map

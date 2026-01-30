@@ -1,19 +1,20 @@
 /*!
- * froala_editor v5.0.0 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Turkish
    */
-
   FE.LANGUAGE['tr'] = {
     translation: {
       // Place holder
@@ -155,14 +156,6 @@
       'Left align': 'Sola hizala',
       'Center align': 'Ortala',
       'Right align': 'Sağa hizala',
-      'solid': 'Düz çizgi',
-      'dashed': 'Kesikli çizgi',
-      'dotted': 'Noktalı çizgi',
-      'double': 'Çift çizgi',
-      'groove': 'Oyuk çizgi',
-      'ridge': 'Kabartmalı çizgi',
-      'inset': 'İç çizgi',
-      'outset': 'Dış çizgi',
       // Files
       'Upload File': "Dosya Y\xFCkle",
       'Drop file': "B\u0131rak dosya",
@@ -327,19 +320,10 @@
       'Enter the anchor name without space': 'Çapa adını boşluksuz girin',
       'Anchor name already exists.': 'Çapa adı zaten mevcut.',
       // Export to Word
-      'Export to Word': 'Word\'e Aktar',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Eklentinin çalışması için gereken tüm bağımlı kitaplıkların mevcut olduğundan emin olun.',
-      // Import_from_word
-      'Import from Word': 'Word\'den İçe Aktar',
-      'Please upload a valid file': 'Lütfen geçerli bir dosya yükleyin.',
-      'File size must be less than': 'Dosya boyutu şu değerden az olmalıdır',
-      //Code Snippet
-      'Code Snippet': 'Kod Parçacığı',
-      'Insert Code Snippet': 'Kod Parçacığı Ekle',
-      'Edit Code Snippet': 'Kod Parçacığı Düzenle'
+      'Export to Word': 'Word\'e Aktar'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=tr.js.map

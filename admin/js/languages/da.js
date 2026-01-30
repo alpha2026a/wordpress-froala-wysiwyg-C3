@@ -1,19 +1,20 @@
 /*!
- * froala_editor v5.0.0 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Danish
    */
-
   FE.LANGUAGE['da'] = {
     translation: {
       // Place holder
@@ -155,14 +156,6 @@
       'Left align': 'Venstrejusteret',
       'Center align': 'Centerjuster',
       'Right align': 'Højrejuster',
-      'solid': 'Fuldt optrukket linje',
-      'dashed': 'Stiplet linje',
-      'dotted': 'Prikket linje',
-      'double': 'Dobbelt linje',
-      'groove': 'Indskåret linje',
-      'ridge': 'Hævet linje',
-      'inset': 'Indvendig linje',
-      'outset': 'Udvendig linje',
       // Files
       'Upload File': 'Upload fil',
       'Drop file': 'Træk filen herind',
@@ -324,19 +317,10 @@
       'Drag PageBreak': 'Træk sideskift',
       'Page Break': 'Sideskift',
       //Export to Word
-      'Export to Word': 'Eksporter til Word',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Sørg for, at alle nødvendige afhængige biblioteker er tilgængelige, for at pluginnet kan fungere.',
-      // Import_from_word
-      'Import from Word': 'Importér fra Word',
-      'Please upload a valid file': 'Upload venligst en gyldig fil.',
-      'File size must be less than': 'Filstørrelsen skal være mindre end',
-      //Code Snippet
-      'Code Snippet': 'Kodeuddrag',
-      'Insert Code Snippet': 'Indsæt kodeuddrag',
-      'Edit Code Snippet': 'Rediger kodeuddrag'
+      'Export to Word': 'Eksporter til Word'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=da.js.map

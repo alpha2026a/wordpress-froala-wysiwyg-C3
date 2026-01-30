@@ -1,28 +1,30 @@
 /*!
- * froala_editor v1.0.8 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   function _defineProperty(e, r, t) {
     return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
       value: t,
-      enumerable: true,
-      configurable: true,
-      writable: true
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
     }) : e[r] = t, e;
   }
   function _toPrimitive(t, r) {
     if ("object" != typeof t || !t) return t;
     var e = t[Symbol.toPrimitive];
     if (void 0 !== e) {
-      var i = e.call(t, r);
+      var i = e.call(t, r || "default");
       if ("object" != typeof i) return i;
       throw new TypeError("@@toPrimitive must return a primitive value.");
     }
@@ -175,14 +177,6 @@
       'Left align': 'יישור לשמאל',
       'Center align': 'יישור למרכז',
       'Right align': 'יישור לימין',
-      'solid': 'קו רציף',
-      'dashed': 'קו מקווקו',
-      'dotted': 'קו מנוקד',
-      'double': 'קו כפול',
-      'groove': 'קו משוקע',
-      'ridge': 'קו בולט',
-      'inset': 'קו פנימי',
-      'outset': 'קו חיצוני',
       // Files
       'Upload File': "\u05D4\u05E2\u05DC\u05D0\u05EA \u05E7\u05D5\u05D1\u05E5",
       'Drop file': "\u05D6\u05E8\u05D5\u05E7 \u05E7\u05D5\u05D1\u05E5 \u05DB\u05D0\u05DF",
@@ -322,9 +316,9 @@
       'Find': 'חפש',
       'Replace with': 'החלף ב-',
       'Replace All': 'החלף הכל'
-    }, _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_translation, "Advanced Options", 'אפשרויות מתקדמות'), 'Match case', 'התאם בין אותיות גדולות וקטנות'), 'Whole words only', 'רק מילים שלמות'), 'More Text', 'עוד טקסט'), 'More Paragraph', 'עוד סעיף'), 'More Rich', 'עוד  עשיר'), 'More Misc', 'שונות עוד'), 'Border', 'גבול'), "Dimensions", 'ממדים'), 'Select Table', 'בחר טבלה'), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_translation, 'Drag Table', 'גרור טבלה'), 'Select PageBreak', 'בחר הפסקת עמוד'), 'Drag PageBreak', 'גרור הפסקת עמוד'), 'Page Break', 'הפסקת עמוד'), 'Insert Anchor', 'הוספת עוגן'), 'There are no entries matching', 'אין רשומות תואמות'), 'Update Anchor', 'עדכון עוגן'), 'Edit Anchor', 'עריכת עוגן'), 'Anchor Name', 'שם העוגן'), 'Anchor Link', 'קישור העוגן'), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_translation, 'Scroll to target', 'גלול אל היעד'), 'Enter the anchor name without space', 'הקלד את שם העוגן ללא רווח'), 'Anchor name already exists.', 'שם העוגן כבר קיים.'), 'Export to Word', 'ייצוא למילה'), 'Ensure that all required dependent libraries are available for the plugin to work.', 'ודא שכל ספריות התלויות הנדרשות זמינות כדי שהתוסף יעבוד.'), 'Import from Word', 'ייבוא מ-Word'), 'Please upload a valid file', 'אנא העלה קובץ תקין.'), 'File size must be less than', 'גודל הקובץ חייב להיות קטן מ-'), 'Code Snippet', 'קטע קוד'), 'Insert Code Snippet', 'הוסף קטע קוד'), _defineProperty(_translation, 'Edit Code Snippet', 'ערוך קטע קוד')),
+    }, _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_translation, "Advanced Options", 'אפשרויות מתקדמות'), 'Match case', 'התאם בין אותיות גדולות וקטנות'), 'Whole words only', 'רק מילים שלמות'), 'More Text', 'עוד טקסט'), 'More Paragraph', 'עוד סעיף'), 'More Rich', 'עוד  עשיר'), 'More Misc', 'שונות עוד'), 'Border', 'גבול'), "Dimensions", 'ממדים'), 'Select Table', 'בחר טבלה'), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_translation, 'Drag Table', 'גרור טבלה'), 'Select PageBreak', 'בחר הפסקת עמוד'), 'Drag PageBreak', 'גרור הפסקת עמוד'), 'Page Break', 'הפסקת עמוד'), 'Insert Anchor', 'הוספת עוגן'), 'There are no entries matching', 'אין רשומות תואמות'), 'Update Anchor', 'עדכון עוגן'), 'Edit Anchor', 'עריכת עוגן'), 'Anchor Name', 'שם העוגן'), 'Anchor Link', 'קישור העוגן'), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_translation, 'Scroll to target', 'גלול אל היעד'), 'Enter the anchor name without space', 'הקלד את שם העוגן ללא רווח'), 'Anchor name already exists.', 'שם העוגן כבר קיים.'), 'Export to Word', 'ייצוא למילה')),
     direction: 'rtl'
   };
 
-}));
+})));
 //# sourceMappingURL=he.js.map

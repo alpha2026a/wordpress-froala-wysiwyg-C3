@@ -1,19 +1,20 @@
 /*!
- * froala_editor v1.0.8 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Spanish
    */
-
   FE.LANGUAGE['es'] = {
     translation: {
       // Place holder
@@ -175,14 +176,6 @@
       'Left align': 'Alinear a la izquierda',
       'Center align': 'Alinear al centro',
       'Right align': 'Alinear a la derecha',
-      'solid': 'Línea sólida',
-      'dashed': 'Línea discontinua',
-      'double': 'Doble',
-      'dotted': 'Línea punteada',
-      'groove': 'Línea ranurada',
-      'ridge': 'Línea en relieve',
-      'inset': 'Línea interior',
-      'outset': 'Línea exterior',
       // Files
       'Upload File': 'Subir archivo',
       'Drop file': 'Soltar archivo',
@@ -339,19 +332,10 @@
       'Enter the anchor name without space': 'Ingrese el nombre del ancla sin espacio',
       'Anchor name already exists.': 'El nombre del ancla ya existe.',
       // Export to Word
-      'Export to Word': 'Exportar a Word',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Asegúrese de que todas las librerías dependientes requeridas estén disponibles para que el plugin funcione.',
-      // Import_from_word
-      'Import from Word': 'Importar de Word',
-      'Please upload a valid file': 'Por favor, suba un archivo válido.',
-      'File size must be less than': 'El tamaño del archivo debe ser menor de',
-      //Code Snippet
-      'Code Snippet': 'Fragmento de Código',
-      'Insert Code Snippet': 'Insertar Fragmento de Código',
-      'Edit Code Snippet': 'Editar Fragmento de Código'
+      'Export to Word': 'Exportar a Word'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=es.js.map

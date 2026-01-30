@@ -1,14 +1,16 @@
 /*!
- * froala_editor v1.0.8 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * German
@@ -182,14 +184,6 @@
       'Left align': 'Linksbündig ausrichten',
       'Center align': 'Zentriert ausrichten',
       'Right align': 'Rechtsbündig ausrichten',
-      'solid': 'Durchgezogene Linie',
-      'dashed': 'Gestrichelte Linie',
-      'double': 'Doppelt',
-      'dotted': 'Gepunktete Linie',
-      'groove': 'Eingeschnittene Linie',
-      'ridge': 'Erhabene Linie',
-      'inset': 'Innere Linie',
-      'outset': 'Äußere Linie',
       // Files
       'Upload File': 'Datei hochladen',
       'Insert File': 'Datei einfügen',
@@ -356,19 +350,10 @@
       'Enter the anchor name without space': 'Geben Sie den Ankamen ohne Leertaste ein',
       'Anchor name already exists.': 'Der Ankername ist bereits vorhanden.',
       // Export to Word
-      'Export to Word': 'In Word exportieren',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Stellen Sie sicher, dass alle erforderlichen abhängigen Bibliotheken für die Funktion des Plugins verfügbar sind.',
-      // Import_from_word
-      'Import from Word': 'Aus Word importieren',
-      'Please upload a valid file': 'Bitte laden Sie eine gültige Datei hoch.',
-      'File size must be less than': 'Die Dateigröße muss kleiner sein als',
-      //Code Snippet
-      'Code Snippet': 'Code-Snippet',
-      'Insert Code Snippet': 'Code-Snippet einfügen',
-      'Edit Code Snippet': 'Code-Snippet bearbeiten'
+      'Export to Word': 'In Word exportieren'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=de.js.map
