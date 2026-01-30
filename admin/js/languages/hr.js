@@ -1,19 +1,20 @@
 /*!
- * froala_editor v5.0.0 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Croatian
    */
-
   FE.LANGUAGE['hr'] = {
     translation: {
       // Place holder
@@ -154,14 +155,6 @@
       'Left align': 'Lijevo poravnanje',
       'Center align': 'Poravnaj po sredini',
       'Right align': 'Desno poravnanje',
-      'solid': 'Puna linija',
-      'dashed': 'Isprekidana linija',
-      'dotted': 'Točkasta linija',
-      'double': 'Dvostruka linija',
-      'groove': 'Urezana linija',
-      'ridge': 'Izbočena linija',
-      'inset': 'Unutarnja linija',
-      'outset': 'Vanjska linija',
       // Files
       'Upload File': 'Prijenos datoteke',
       'Drop file': 'Ispusti datoteku',
@@ -326,19 +319,10 @@
       'Enter the anchor name without space': 'Unesite naziv sidra bez razmaka',
       'Anchor name already exists.': 'Naziv sidra već postoji.',
       // Export to Word
-      'Export to Word': 'Izvezi u Word',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Osigurajte da su sve potrebne zavisne biblioteke dostupne kako bi dodatak radio.',
-      // Import_from_word
-      'Import from Word': 'Uvezi iz Worda',
-      'Please upload a valid file': 'Molimo Vas da prenesete valjanu datoteku.',
-      'File size must be less than': 'Veličina datoteke mora biti manja od',
-      //Code Snippet
-      'Code Snippet': 'Isječak Koda',
-      'Insert Code Snippet': 'Umetni isječak koda',
-      'Edit Code Snippet': 'Uredi isječak koda'
+      'Export to Word': 'Izvezi u Word'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=hr.js.map

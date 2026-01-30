@@ -1,19 +1,20 @@
 /*!
- * froala_editor v1.0.8 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * English spoken in Canada
    */
-
   FE.LANGUAGE['en_ca'] = {
     translation: {
       // Place holder
@@ -155,14 +156,6 @@
       'Left align': 'Left align',
       'Center align': 'Centre align',
       'Right align': 'Right align',
-      'solid': 'solid',
-      'dashed': 'dashed',
-      'dotted': 'dotted',
-      'double': 'double',
-      'groove': 'groove',
-      'ridge': 'ridge',
-      'inset': 'inset',
-      'outset': 'outset',
       // Files
       'Upload File': 'Upload File',
       'Drop file': 'Drop file',
@@ -270,19 +263,10 @@
       'Enter the anchor name without space': 'Enter the anchor name without a space',
       'Anchor name already exists.': 'The anchor name already exists.',
       // Export to Word
-      'Export to Word': 'Export to Word',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Ensure that all required dependent libraries are available for the plugin to work.',
-      // Import_from_word
-      'Import from Word': 'Import from Word',
-      'Please upload a valid file': 'Please upload a valid file',
-      'File size must be less than': 'File size must be less than',
-      //Code Snippet
-      'Code Snippet': 'Code Snippet',
-      'Insert Code Snippet': 'Insert Code Snippet',
-      'Edit Code Snippet': 'Edit Code Snippet'
+      'Export to Word': 'Export to Word'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=en_ca.js.map

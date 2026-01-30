@@ -1,19 +1,20 @@
 /*!
- * froala_editor v5.0.0 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Slovak
    */
-
   FE.LANGUAGE['sk'] = {
     translation: {
       // Place holder
@@ -168,14 +169,6 @@
       'Left align': 'Zarovnať doľava',
       'Center align': 'Zarovnať na stred',
       'Right align': 'Zarovnať doprava',
-      'solid': 'Plná čiara',
-      'dashed': 'Čiarkovaná čiara',
-      'dotted': 'Bodkovaná čiara',
-      'double': 'Dvojitá',
-      'groove': 'Ryhovaná čiara',
-      'ridge': 'Vyvýšená čiara',
-      'inset': 'Vnútorná čiara',
-      'outset': 'Vonkajšia čiara',
       // Files
       'Upload File': 'Nahrať súbor',
       'Drop file': 'Vložte súbor sem',
@@ -333,19 +326,10 @@
       'Enter the anchor name without space': 'Zadajte názov kotvy bez medzier',
       'Anchor name already exists.': 'Názov kotvy už existuje.',
       // Export to Word
-      'Export to Word': 'Exportovať do Wordu',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Uistite sa, že sú k dispozícii všetky požadované závislé knižnice, aby doplnok fungoval.',
-      // Import_from_word
-      'Import from Word': 'Importovať z Wordu',
-      'Please upload a valid file': 'Nahrajte platný súbor.',
-      'File size must be less than': 'Veľkosť súboru musí byť menšia ako',
-      //Code Snippet
-      'Code Snippet': 'Úryvok kódu',
-      'Insert Code Snippet': 'Vložiť úryvok kódu',
-      'Edit Code Snippet': 'Upraviť úryvok kódu'
+      'Export to Word': 'Exportovať do Wordu'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=sk.js.map

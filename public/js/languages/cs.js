@@ -1,19 +1,20 @@
 /*!
- * froala_editor v1.0.8 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v1.0.7 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2026 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
-})(this, (function (FE) { 'use strict';
+  (factory(global.FroalaEditor));
+}(this, (function (FE) { 'use strict';
+
+  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
   /**
    * Czech
    */
-
   FE.LANGUAGE['cs'] = {
     translation: {
       // Place holder
@@ -167,14 +168,6 @@
       'Left align': 'Zarovnat doleva',
       'Center align': 'Zarovnat na střed',
       'Right align': 'Zarovnat vpravo',
-      'solid': 'Plná čára',
-      'dashed': 'Čárkovaná čára',
-      'double': 'Dvojitá',
-      'dotted': 'Tečkovaná čára',
-      'groove': 'Vydutá čára',
-      'ridge': 'Vystouplá čára',
-      'inset': 'Vnitřní čára',
-      'outset': 'Vnější čára',
       // Files
       'Upload File': 'Nahrát soubor',
       'Drop file': 'Přetáhněte sem soubor',
@@ -332,19 +325,10 @@
       'Drag PageBreak': 'Přetáhnout zalomení stránky',
       'Page Break': 'Konec stránky',
       //Export to Word
-      'Export to Word': 'Exportovat do Wordu',
-      'Ensure that all required dependent libraries are available for the plugin to work.': 'Zajistěte, aby byly k dispozici všechny požadované závislé knihovny pro funkčnost pluginu.',
-      // Import_from_word
-      'Import from Word': 'Importovat z Wordu',
-      'Please upload a valid file': 'Nahrajte platný soubor.',
-      'File size must be less than': 'Velikost souboru musí být menší než',
-      //Code Snippet
-      'Code Snippet': 'Úryvek kódu',
-      'Insert Code Snippet': 'Vložit úryvek kódu',
-      'Edit Code Snippet': 'Upravit úryvek kódu'
+      'Export to Word': 'Exportovat do Wordu'
     },
     direction: 'ltr'
   };
 
-}));
+})));
 //# sourceMappingURL=cs.js.map
